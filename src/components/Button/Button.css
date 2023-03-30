@@ -1,0 +1,23 @@
+.button {
+    border: thin solid rgba(0,0, 0, 0.2);
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    text-transform: uppercase;
+}
+
+.button-primary {
+    background-color: var(--color-primary);
+    color: #fff;
+}
+
+.button-error {
+    background-color: var(--color-error);
+    color: #fff;
+}
+
+.button:hover {
+    opacity: 0.8;
+}

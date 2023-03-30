@@ -1,0 +1,13 @@
+.action-bar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+
+.action-bar input {
+    width: 50px;
+    padding: 0.5rem 0 0.5rem 4px;
+}

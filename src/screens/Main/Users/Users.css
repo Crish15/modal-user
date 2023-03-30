@@ -1,0 +1,75 @@
+.user-detail {
+    display: grid;
+    width: 100%;
+    height: 100px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    margin-bottom: 1rem;
+    grid-template-columns: 100px 1fr;
+}
+
+.user-image-holder {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-size: contain;
+    border-right: thin solid #ccc;
+    background-color: rgba(255,255,255,0.8);
+}
+
+.user-info-container {
+    padding: 1rem;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+}
+
+.user-toggle-button {
+    width: auto;
+    flex:1 ;
+    margin: 0.5rem 0.5rem;
+    height: 35px;
+    border: none;
+    font-weight: 600;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+.users-switch {
+    display: grid;
+    margin: 1rem;
+    grid-row-gap: 4px;
+}
+
+.users-switch .button {
+    border-radius: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    user-select: none;
+    border-right: 0;
+}
+.grid-column-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-column-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.grid-column-5 {
+    grid-template-columns: repeat(5, 1fr);
+}
+
+
+.grid-column-3 .button:nth-child(3n+1), .grid-column-4 .button:nth-child(4n+1), .grid-column-5 .button:nth-child(5n+1) {
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.grid-column-3 .button:nth-child(3n), .grid-column-4 .button:nth-child(4n), .grid-column-5 .button:nth-child(5n), .users-switch .button:last-child {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-right: thin solid rgba(0,0, 0, 0.2);
+}
