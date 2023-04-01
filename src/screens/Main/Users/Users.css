@@ -1,7 +1,7 @@
 .user-detail {
     display: grid;
     width: 100%;
-    height: 100px;
+    min-height: 100px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     margin-bottom: 1rem;
     grid-template-columns: 100px 1fr;
@@ -12,7 +12,8 @@
     height: 100%;
     overflow: hidden;
     background-size: contain;
-    border-right: thin solid #ccc;
+    background-repeat: no-repeat;
+    background-position: bottom;
     background-color: rgba(255,255,255,0.8);
 }
 

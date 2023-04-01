@@ -1,7 +1,8 @@
 // crea un context react per gestire gli alert
 
-import React, { createContext, useContext, useState } from 'react'
+import React, {createContext, useContext, useEffect, useRef, useState} from 'react'
 import './AlertContext.css'
+import Modal, {IModalRef} from "../Modal/Modal";
 
 export interface IAlertParams {
     title: string
@@ -27,6 +28,7 @@ export const AlertProvider = ({ children } :  {children: React.ReactNode}) => {
         message: '',
         show: false,
     })
+    const ref = useRef<IModalRef>(null)
 
     const showAlert = (obj: IAlertParams) => {
         setParams(() => ({ ...obj, show: true }));
@@ -36,12 +38,25 @@ export const AlertProvider = ({ children } :  {children: React.ReactNode}) => {
         setParams((prev) => ({ title:'', type:'primary', message:'', show: false }))
     }
 
+    useEffect(() => {
+        function showHideModal() {
+            if(params.show) {
+                ref.current?.open();
+                ref.current?.bringOnTop();
+            } else {
+                ref.current?.close();
+            }
+        }
+
+        showHideModal()
+    }, [params.show])
+
     return (
         <AlertContext.Provider value={{ showAlert, hideAlert }}>
-            {params.show ? <div className={'alert alert-'+params.type}>
-                <h1 className="alert-title">{params.title}</h1>
+            <Modal ref={ref} onClose={hideAlert}>
+                <h1 className={"alert-title alter-title-"+params.type}>{params.title}</h1>
                 <p className="alert-message">{params.message}</p>
-            </div> : null}
+            </Modal>
             {children}
         </AlertContext.Provider>
     )
