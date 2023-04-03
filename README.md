@@ -9,3 +9,10 @@ You can switch between users by clicking on the list displayed below the profile
 
 At the bottom of the modal there is a toolbar where you can set the size of the list and regenerate the data.
 If the chosen quantity is greater than 20 or less than 0, an error message is displayed.
+
+# Installation
+
+To start the project, run the command
+`npm install`
+once finished, use the command
+`npm run dev`
